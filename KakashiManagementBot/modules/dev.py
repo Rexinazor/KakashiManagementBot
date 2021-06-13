@@ -5,7 +5,7 @@ import sys
 from contextlib import suppress
 from time import sleep
 
-import SaitamaRobot
+import KakashiManagementBot
 
 from KakashiManagementBot import dispatcher
 from KakashiManagementBot.modules.helper_funcs.chat_status import dev_plus
