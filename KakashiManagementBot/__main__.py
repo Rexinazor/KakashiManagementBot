@@ -4,10 +4,9 @@ import re
 from sys import argv
 from typing import Optional
 
-from SaitamaRobot import (
+from KakashiGroupBot import (
     ALLOW_EXCL,
     CERT_PATH,
-    DONATION_LINK,
     LOGGER,
     OWNER_ID,
     PORT,
@@ -22,9 +21,9 @@ from SaitamaRobot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from SaitamaRobot.modules import ALL_MODULES
-from SaitamaRobot.modules.helper_funcs.chat_status import is_user_admin
-from SaitamaRobot.modules.helper_funcs.misc import paginate_modules
+from KakashiManagementBot.modules import ALL_MODULES
+from KakashiManagementBot.modules.helper_funcs.chat_status import is_user_admin
+from KakashiManagementBot.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -36,7 +35,7 @@ from telegram.error import (
 )
 from telegram.ext import (
     CallbackContext,
-    CallbackQueryHandler,
+    CallbackQu4]*eryHandler,
     CommandHandler,
     Filters,
     MessageHandler,
@@ -71,25 +70,20 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hey hi {}, I'm {}!
-I am an Anime themed group management bot.
-Built by weebs for weebs, I specialize in managing anime eccentric communities!
+Hey [=p-0; m hi {}, I'm {}!
+I am a Python Based Dynamic and most adaptable group managing bot!
 """
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I'm a Hero For Fun and help admins manage their groups with One Punch! Have a look at the following for an idea of some of \
+I am a anime based group managing bot, Let's have a look \
 the things I can help you with.
-
 *Main* commands available:
  • /help: PM's you this message.
  • /help <module name>: PM's you info about that module.
- • /donate: information on how to donate!
  • /settings:
    • in PM: will send you your settings for all supported modules.
    • in a group: will redirect you to pm, with all that chat's settings.
-
-
 {}
 And the following:
 """.format(
@@ -97,12 +91,7 @@ And the following:
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
 )
 
-SAITAMA_IMG = "https://telegra.ph/file/46e6d9dfcb3eb9eae95d9.jpg"
-
-DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project via [Paypal](ko-fi.com/sawada) or by contacting @Sawada \
- Supporting isnt always financial! \
- Those who cannot provide monetary support are welcome to help us develop the bot at @OnePunchDev."""
+KAKASHI_IMG = "https://telegra.ph/file/cc694ceffbd66db9bea2e.jpg"
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -115,7 +104,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("SaitamaRobot.modules." + module_name)
+    imported_module = importlib.import_module("KakashiManagementBot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -209,7 +198,7 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
-                SAITAMA_IMG,
+                KAKASHI_IMG,
                 PM_START_TEXT.format(
                     escape_markdown(first_name), escape_markdown(context.bot.first_name),
                 ),
@@ -219,7 +208,7 @@ def start(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="☑️ Add me",
+                                text="☑️ Add me to your group",
                                 url="t.me/{}?startgroup=true".format(
                                     context.bot.username,
                                 ),
@@ -228,35 +217,30 @@ def start(update: Update, context: CallbackContext):
                         [
                             InlineKeyboardButton(
                                 text="🚑 Support",
-                                url=f"https://t.me/{SUPPORT_CHAT}",
+                                url=f"https://t.me/kakashi_support_bot",
                             ),
                             InlineKeyboardButton(
                                 text="🔔 Updates",
-                                url="https://t.me/OnePunchUpdates",
+                                url="https://t.me/kakashibot_updates",
                             ),
                         ],
                         [
                             InlineKeyboardButton(
                                 text="🧾 Getting Started",
-                                url="https://t.me/OnePunchUpdates/29",
+                                url="https://t.me/kakashibot_updates/2",
                             ),
                             InlineKeyboardButton(
                                 text="🗄 Source code",
-                                url="https://github.com/AnimeKaizoku/SaitamaRobot",
+                                url="https://github.com/Rexinazor/KakashiGroupBot", 
                             ),
                         ],
-                        [
-                            InlineKeyboardButton(
-                                text="☠️ Kaizoku Network",
-                                url="https://t.me/Kaizoku/4",
-                            ),
-                        ],
+                        
                     ],
                 ),
             )
     else:
         update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            "I am alive!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime,
             ),
             parse_mode=ParseMode.HTML,
@@ -575,41 +559,6 @@ def get_settings(update: Update, context: CallbackContext):
         send_settings(chat.id, user.id, True)
 
 
-@run_async
-def donate(update: Update, context: CallbackContext):
-    user = update.effective_message.from_user
-    chat = update.effective_chat  # type: Optional[Chat]
-    bot = context.bot
-    if chat.type == "private":
-        update.effective_message.reply_text(
-            DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True,
-        )
-
-        if OWNER_ID != 254318997 and DONATION_LINK:
-            update.effective_message.reply_text(
-                "You can also donate to the person currently running me "
-                "[here]({})".format(DONATION_LINK),
-                parse_mode=ParseMode.MARKDOWN,
-            )
-
-    else:
-        try:
-            bot.send_message(
-                user.id,
-                DONATE_STRING,
-                parse_mode=ParseMode.MARKDOWN,
-                disable_web_page_preview=True,
-            )
-
-            update.effective_message.reply_text(
-                "I've PM'ed you about donating to my creator!",
-            )
-        except Unauthorized:
-            update.effective_message.reply_text(
-                "Contact me in PM first to get donation information.",
-            )
-
-
 def migrate_chats(update: Update, context: CallbackContext):
     msg = update.effective_message  # type: Optional[Message]
     if msg.migrate_to_chat_id:
@@ -660,7 +609,6 @@ def main():
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
-    dispatcher.add_handler(donate_handler)
 
     dispatcher.add_error_handler(error_callback)
 
