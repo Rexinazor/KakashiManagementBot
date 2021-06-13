@@ -25,9 +25,10 @@ GIFS = [
     "CgACAgUAAx0CU_rCTAABAjdSX1s3fq5iEJ64YeQLKI8cD7CSuSEAAlUBAAJu09hW5iqWB0hTPD4bBA",
 ]
 
-SLAP_SAITAMA_TEMPLATES = (
+SLAP_KAKASHI_TEMPLATES = (
     "Slap me one more time and I'll mute you.",
     "Stop slapping me. REEEEEEEEEEEEEE.",
+    "Fuck You.",
     [
         "I am muting you for a minute.",  # normal reply
         "Stop slapping me just because I can't mute you. REEEEEEEEEE.",  # reply to admin
@@ -194,7 +195,7 @@ PAT_STICKERS = (
 
 PING_STRING = (
     "PONG!!",
-    "I am here!",
+    "I am here dude!",
 )
 
 ITEMS = (
