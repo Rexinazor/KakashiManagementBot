@@ -1,7 +1,7 @@
 import random
 
-from SaitamaRobot import dispatcher
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler
+from KakashiManagementBot import dispatcher
+from KakashiManagementBot.modules.disable import DisableAbleCommandHandler
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 
