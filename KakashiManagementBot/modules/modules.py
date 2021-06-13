@@ -1,8 +1,8 @@
 import importlib
 import collections
 
-from SaitamaRobot import dispatcher, telethn
-from SaitamaRobot.__main__ import (
+from KakashiManagementBot import dispatcher, telethn
+from KakashiManagementBot.__main__ import (
     CHAT_SETTINGS,
     DATA_EXPORT,
     DATA_IMPORT,
@@ -13,7 +13,7 @@ from SaitamaRobot.__main__ import (
     USER_INFO,
     USER_SETTINGS,
 )
-from SaitamaRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from KakashiManagementBot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
