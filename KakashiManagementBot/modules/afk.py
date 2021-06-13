@@ -3,13 +3,13 @@ import html
 from datetime import datetime
 import humanize
 
-from SaitamaRobot import dispatcher
-from SaitamaRobot.modules.disable import (
+from KakashiManagementBot import dispatcher
+from KakashiManagementBot.modules.disable import (
     DisableAbleCommandHandler,
     DisableAbleMessageHandler,
 )
-from SaitamaRobot.modules.sql import afk_sql as sql
-from SaitamaRobot.modules.users import get_user_id
+from KakashiManagementBot.modules.sql import afk_sql as sql
+from KakashiManagementBot.modules.users import get_user_id
 from telegram import MessageEntity, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, Filters, MessageHandler, run_async
