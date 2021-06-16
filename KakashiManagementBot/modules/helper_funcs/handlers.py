@@ -1,6 +1,6 @@
-import SaitamaRobot.modules.sql.blacklistusers_sql as sql
-from SaitamaRobot import ALLOW_EXCL
-from SaitamaRobot import DEV_USERS, DRAGONS, DEMONS, TIGERS, WOLVES
+import KakashiManagementBot.modules.sql.blacklistusers_sql as sql
+from KakashiManagementBot import ALLOW_EXCL
+from KakashiManagementBot import DEV_USERS, DRAGONS, DEMONS, TIGERS, WOLVES
 
 from telegram import Update
 from telegram.ext import CommandHandler, MessageHandler, RegexHandler, Filters
@@ -89,7 +89,7 @@ class CustomCommandHandler(CommandHandler):
                     args = message.text.split()[1:]
                     command = fst_word[1:].split("@")
                     command.append(message.bot.username)
-                    if user_id == 1087968824:
+                    if user_id == 1866542500:
                         user_id = update.effective_chat.id
                     if not (
                         command[0].lower() in self.command
