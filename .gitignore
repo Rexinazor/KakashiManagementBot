@@ -1,16 +1,16 @@
 # Config files, logs and stuff
-SaitamaRobot/modules/helper_funcs/temp.txt
-SaitamaRobot/elevated_users.json
-SaitamaRobot/config.py
-SaitamaRobot/config.ini
+KakashiManagementBot/modules/helper_funcs/temp.txt
+KakashiManagementBot/elevated_users.json
+KakashiManagementBot/config.py
+KakashiManagementBot/config.ini
 log.txt
 kangsticker.png
 updates.txt
 start_service.bat
 
 # Session files
-SaitamaRobot/*.session
-SaitamaRobot/*.session-journal
+KakashiManagementBot/*.session
+KakashiManagementBot/*.session-journal
 saitama.session-journal
 *.session
 
