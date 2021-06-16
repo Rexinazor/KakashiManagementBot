@@ -2,7 +2,7 @@ import threading
 
 from datetime import datetime
 
-from SaitamaRobot.modules.sql import BASE, SESSION
+from KakashiManagementBot.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, Integer, UnicodeText, DateTime
 
 
