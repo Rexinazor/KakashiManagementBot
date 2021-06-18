@@ -1,7 +1,7 @@
 import threading
 
-from SaitamaRobot import dispatcher
-from SaitamaRobot.modules.sql import BASE, SESSION
+from KakashiManagementBot import dispatcher
+from KakashiManagementBot.modules.sql import BASE, SESSION
 from sqlalchemy import (
     Column,
     ForeignKey,
