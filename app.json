@@ -53,7 +53,7 @@
     },
     "API_HASH": {
       "description": "Your API Hash",
-      "value": "8443"
+      "value": ""
     },
     "WEBHOOK": {
       "description": "Port Webhook",
