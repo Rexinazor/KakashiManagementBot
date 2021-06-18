@@ -8,7 +8,7 @@
     "manager",
     "Kakashi"
   ],
-  "repository": "hhttps://github.com/Rexinazor/KakashiGroupBot",
+  "repository": "hhttps://github.com/Rexinazor/KakashiManagementBot",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable env variables",
@@ -33,7 +33,7 @@
     },
     "MESSAGE_DUMP": {
       "description": "optional: a chat where your replied saved messages are stored, to stop people deleting their old",
-      "value": ""
+      "value": "TRUE"
     },
     "SUDO_USERS": {
       "description": "A space separated list of user_ids which should be considered sudo users",
