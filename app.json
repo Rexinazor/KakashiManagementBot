@@ -71,13 +71,5 @@
       "description": "Which sticker to use when banning people. Use https://telegram.dog/ShowJsonBot to get the file_id",
       "value": "CAADBQADNwEAAjZzSxRZAc49mnFSSAI"
     }
-  },
-  "addons": [
-    {
-      "plan": "heroku-postgresql",
-      "options": {
-        "version": "10"
-      }
-    }
-  ]
+  }
 }
