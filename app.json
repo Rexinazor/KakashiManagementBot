@@ -26,7 +26,6 @@
       "description": "Your username",
       "value": "Avrazel"
     },
-  
     "URL": {
       "description": "The Heroku App URL similar to https://<appname>.herokuapp.com/",
       "value": ""
