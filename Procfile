@@ -1,1 +1,2 @@
- worker:  python3 -m haruka
+ worker : chmod +x start.sh && bash start.sh
+
