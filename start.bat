@@ -1,4 +1,6 @@
 @echo off
-TITLE Saitama Robot
-:: Enables virtual env mode and then starts saitama
-env\scripts\activate.bat && py -m SaitamaRobot
+TITLE 
+KakashiManagementBot
+:: Enables virtual env mode and then starts KakashiManagementBot
+env\scripts\activate.bat && py -m KakashiManagementBot
+
