@@ -64,11 +64,11 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/SaitamaRobot
-RUN git clone -b shiken https://github.com/AnimeKaizoku/SaitamaRobot /root/SaitamaRobot
-WORKDIR /root/SaitamaRobot
+# Copy Python Requirements to /root/KakashiManagementBot
+RUN git clone -b shiken https://github.com/Rexinazor/KakashiManagementBot /root/KakashiManagementBot
+WORKDIR /root/KakashiManagementBot
 
-#Copy config file to /root/SaitamaRobot/SaitamaRobot
+#Copy config file to /root/KakashiManagementBot/KakashiManagementBot
 COPY ./KakashiManagementBot/sample_config.py ./KakashiManagementBot/config.py* /root/KakashiManagementBot/KakashiManagementBot/
 
 ENV PATH="/home/bot/bin:$PATH"
