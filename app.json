@@ -1,8 +1,10 @@
-"name": "KakashiManagementBot",
-"logo": "https://telegra.ph/file/0b9417c2b2850c51335df.jpg",
-"description": "A dynamic anime based group management bot.",
+{
+      "name": "KakashiManagementBot",
+      "logo": "https://telegra.ph/file/0b9417c2b2850c51335df.jpg",
+      "description": "A dynamic anime based group management bot.",
       "keywords": [
          "telegram",
+         "anime",
          "group",
          "manager",
          "kakashi"
@@ -40,41 +42,41 @@
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
-         "value": "1866542500"
+         "value": "792109647"
       },
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": "Avrazel"
+         "value": "Sawada"
       },
       "SUPPORT_CHAT": {
-         "description": "Your Telegram support group or chat username where users will appeal for there issues",
+         "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to saitama support than consider you made an enemy.",
          "required": true,
-         "value": "Kakashi_support_bot"
+         "value": "MyAwesomeSupportGroupGoesHere"
       },
       "EVENT_LOGS": {
          "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-123456'",
-         "required": false,
-         "value": ""
+         "required": true,
+         "value": "-123456798"
       },
       "JOIN_LOGGER": {
          "description": "A channel where bot will print who added it to what group, useful during debugging or spam handling.",
-         "required": false,
-         "value": ""
+         "required": true,
+         "value": "-123456798"
       },      
       "CASH_API_KEY": {
          "description": "Required for currency converter. Get yours from https://www.alphavantage.co/support/#api-key",
-         "required": false,
+         "required": true,
          "value": "-xyz"
       },
       "TIME_API_KEY": {
          "description": "Required for timezone information. Get yours from https://timezonedb.com/api",
-         "required": false,
+         "required": true,
          "value": "-xyz"
       },
       "DEV_USERS": {
          "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Saitama support then keep the current ID's here at they are and add yours.",
          "required": false,
-         "value": "1866542500 1163756398"
+         "value": "660565862 459034222 189005567 346981140 367222759"
       },
       "sw_api": {
          "description": "Spamwatch API Token, Get one from @SpamWatchBot.",
@@ -88,22 +90,22 @@
       "DRAGONS": {
          "description": "A space separated list of user IDs who you want to assign as sudo users.",
          "required": false,
-         "value": "1866542500 1163756398"
+         "value": "459034222 189005567 660565862 346981140 367222759"
       },
       "DEMONS": {
          "description": "A space separated list of user IDs who you wanna assign as support users(gban perms only).",
          "required": false,
-         "value": "False"
+         "value": "615304572"
       },
       "TIGERS": {
          "description": "A space separated list of user IDs who you wanna assign as tiger users.",
          "required": false,
-         "value": "False"
+         "value": ""
       },
       "WOLVES": {
          "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
          "required": false,
-         "value": "False"
+         "value": ""
       },
       "ENV": {
          "description": "Setting this to ANYTHING will enable environment variables. Leave it as it is",
@@ -112,7 +114,7 @@
       "WEBHOOK": {
          "description": "Setting this to ANYTHING will enable webhooks. If you dont know how this works leave it as it is",
          "required": false,
-         "value": "False"
+         "value": ""
       },
       "PORT": {
          "description": "Port to use for your webhooks. Better leave this as it is on heroku",
@@ -132,7 +134,7 @@
       "BL_CHATS": {
          "description": "List of chats you want blacklisted.",
          "required": false,
-         "value": "Anything"
+         "value": ""
       },
       "ALLOW_EXCL": {
          "description": "Set this to True if you want ! to be a command prefix along with /. Recommended is True",
@@ -141,7 +143,7 @@
       "DONATION_LINK": {
          "description": "Optional: link where you would like to receive donations. If you are a noob, better leave it linking to paul",
          "required": false,
-         "value": "false"
+         "value": "https://www.paypal.me/PaulSonOfLars"
       },
       "DEL_CMDS": {
          "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
@@ -161,16 +163,6 @@
          "description": "Required for wallpaper. Get your's from https://wall.alphacoders.com/",
          "required": false,
          "value": ""
-      },
-      "MONGO_DB_URI": {
-         "description": "Database URL From https://www.mongodb.com/",
-         "required": false,
-         "value": ""
-      },
-      "REM_BG_API_KEY": {
-          "description": "API key from https://www.remove.bg/api .",
-          "required": false,
-          "value": ""
       }
       
    }
